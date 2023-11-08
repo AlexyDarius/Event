@@ -2,7 +2,7 @@
 include $_SERVER['DOCUMENT_ROOT']. '/includes/head.php'
 ?>
 
-    <title>Darius Pizza - Galerie</title>
+    <title>DariusDev - Event</title>
     <link rel="stylesheet" type="text/css" href="/modules/event/css/style.css">
 </head>
 <body style="--bs-body-bg: #e3f3f5;--bs-body-bg-t: rgba(227, 243, 245, 0.9);--bs-primary: #0c3028;--bs-secondary: #f53219;--bs-primary-t: rgba(12, 48, 40, 0.85);background: var(--bs-body-bg);font-family: Lato-Regular;color: var(--bs-primary);">
@@ -20,7 +20,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
     <div id="image-container">
 
 <?php
-// require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/event_displayer.php';
+require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/event_displayer.php';
 ?>
 
     </div>
