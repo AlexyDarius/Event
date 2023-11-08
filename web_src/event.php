@@ -15,12 +15,12 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
         <h1 style="color: var(--bs-secondary);font-family: Lato-Black;font-size: 48px; text-align : center; margin : 32px">Nos événements</h1>
     </header>
 
-    <h2 style="text-align : center; font-family: Lato-Bold;color: var(--bs-primary);font-size: 24px;">Retrouvez-nous enos événements ici</h2>
+    <h2 style="text-align : center; font-family: Lato-Bold;color: var(--bs-primary);font-size: 24px;">Retrouvez nos événements ici</h2>
 
     <div id="image-container">
 
 <?php
-require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/event_displayer.php';
+// require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/event_displayer.php';
 ?>
 
     </div>

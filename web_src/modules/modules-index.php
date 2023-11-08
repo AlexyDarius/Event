@@ -22,6 +22,11 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
     <!-- Put modules links here -->
         <div class="container text-muted py-4 py-lg-5">
             <div class="row">
+                <div class="col text-center"><a href="/event/event-editor.php">Éditeur d'événement</a></div>
+            </div>
+        </div>
+        <div class="container text-muted py-4 py-lg-5">
+            <div class="row">
                 <div class="col text-center"><a href="localhost:8888">Revenir au site</a></div>
             </div>
         </div>
