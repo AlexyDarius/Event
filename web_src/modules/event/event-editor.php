@@ -4,7 +4,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/head.php'
 ?>
 
     <title>Votre interface de gestion de galerie</title>
-    <link rel="stylesheet" type="text/css" href="/modules/gallery/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/modules/event/css/style.css">
 </head>
 <body style="--bs-body-bg: #f5efec;--bs-primary: #35251c;--bs-primary-rgb: 53,37,28;--bs-secondary: #ee7830;--bs-secondary-rgb: 238,120,48;color: var(--bs-primary);font-family: Montserrat, sans-serif;">
 
@@ -42,7 +42,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 ?>
 
 </div>
-    <p style="text-align: center; font-size: 24px"><a href="localhost:8888/gallery.php">Revenir à l'accueil</a></p>
+    <p style="text-align: center; font-size: 24px"><a href="localhost:8888/event.php">Revenir à l'accueil</a></p>
 </div>
 
     <script src="js/script.js"></script>
