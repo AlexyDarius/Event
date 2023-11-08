@@ -56,7 +56,7 @@ function uploadEvent(event) {
     };
 
     // Open a POST request to the server
-    xhr.open('POST', 'event-builder.php', true);
+    xhr.open('POST', 'event-editor.php', true);
 
     // Send the form data as the request body
     xhr.send(formData);

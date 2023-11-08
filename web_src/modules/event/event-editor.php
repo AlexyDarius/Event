@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/head.php'
 <body style="--bs-body-bg: #f5efec;--bs-primary: #35251c;--bs-primary-rgb: 53,37,28;--bs-secondary: #ee7830;--bs-secondary-rgb: 238,120,48;color: var(--bs-primary);font-family: Montserrat, sans-serif;">
 
 <?php
-//require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/upload_image.php';
+require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/upload_event.php';
 ?>
 
 <?php
@@ -46,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
     <div id="image-container">
 
 <?php
-// require $_SERVER['DOCUMENT_ROOT']. '/modules/gallery/requires/back_office_display.php';
+require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/back_office_display.php';
 ?>
 
 </div>
