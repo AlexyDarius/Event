@@ -1,12 +1,26 @@
-function uploadImage(event) {
+function uploadEvent(event) {
     event.preventDefault(); // Prevent the form from being submitted normally
 
-    let form = document.getElementById('image-upload-form');
-    let legendInput = document.getElementById('legend');
+    let form = document.getElementById('event-form');
+    let titleInput = document.getElementById('title');
+    let placeInput = document.getElementById('place');
+    let textInput = document.getElementById('text');
     let errorMessage = document.getElementById('error-message');
 
-    if (legendInput.value.length > 255) {
-        errorMessage.textContent = "Legend is too long. Please keep it under 255 characters.";
+    if (titleInput.value.length > 255) {
+        errorMessage.textContent = "Title is too long. Please keep it under 255 characters.";
+        errorMessage.style.display = 'block'; // Display the error message
+        return;
+    }
+
+    if (placeInput.value.length > 255) {
+        errorMessage.textContent = "Place is too long. Please keep it under 255 characters.";
+        errorMessage.style.display = 'block'; // Display the error message
+        return;
+    }
+
+    if (textInput.value.length > 65535) {
+        errorMessage.textContent = "Text is too long. Please keep it under 65 535 characters.";
         errorMessage.style.display = 'block'; // Display the error message
         return;
     }
@@ -14,7 +28,7 @@ function uploadImage(event) {
     // Check the file size
     let maxFileSize = 100 * 1024; // 100KB in bytes
     if (document.getElementById('image').files[0].size > maxFileSize) {
-        errorMessage.textContent = "File size exceeds the maximum allowed size (100KB).";
+        errorMessage.textContent = "Image size exceeds the maximum allowed size (100KB).";
         errorMessage.style.display = 'block'; // Display the error message
         return;
     }
@@ -32,17 +46,17 @@ function uploadImage(event) {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 // Image uploaded successfully
-                document.getElementById('status-message').textContent = 'Image téléchargée avec succès !';
+                document.getElementById('status-message').textContent = 'Événement créé avec succès !';
                 form.reset(); // Clear the form
             } else {
                 // Image upload failed
-                document.getElementById('status-message').textContent = "Impossible de télécharger l'image. Réessayez.";
+                document.getElementById('status-message').textContent = "Impossible de créer l'événement. Réessayez.";
             }
         }
     };
 
     // Open a POST request to the server
-    xhr.open('POST', 'gallery-editor.php', true);
+    xhr.open('POST', 'event-builder.php', true);
 
     // Send the form data as the request body
     xhr.send(formData);
