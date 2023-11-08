@@ -22,14 +22,22 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 
     <!-- Form for uploading images -->
     <div id="upload-container">
-        <form id="image-upload-form" method="post" enctype="multipart/form-data" onsubmit="uploadImage(event);">
-            <label for="image">Sélectionnez une image à télécharger (200ko max, utiliser <a href="https://cloudconvert.com/webp-converter">compression webp si possible</a>, taille max conseillée 512x512px):</label>
+        <form id="event-form" method="post" enctype="multipart/form-data" onsubmit="uploadImage(event);">
+            <label for="title">Titre (255 caractères max):</label>
+            <input type="text" name="title" id="title" required maxlength="255">
+            <label for="title">Lieu (255 caractères max):</label>
+            <input type="text" name="place" id="place" required maxlength="255">
+            <label for="date">Date et heure</label>
+            <input type="datetime-local" name="date" id="date">
+            <label for="image">Sélectionnez une image de couverture à télécharger (200ko max, utiliser <a href="https://cloudconvert.com/webp-converter">compression webp si possible</a>, taille max conseillée 512x512px):</label>
             <input type="file" name="image" id="image" accept="image/*" required>
             <input type="hidden" name="MAX_FILE_SIZE" value="100000"> <!-- 100ko -->
-            <label for="legend">Légende (255 caractères max):</label>
-            <input type="text" name="legend" id="legend" required maxlength="255">
-            <button type="submit">Envoyer l'image</button>
-            <label for="warning">! Ne pas cliquer plusieurs fois sur le bouton d'envoi !</label>
+            <label for="date">Texte à afficher</label>
+            <textarea id="text" name="text" rows="6" cols="60"></textarea>
+            <label for="date">Lien vers la réservation</label>
+            <input type="link" name="link" id="link">
+            <button type="submit">Créer l'événement</button>
+            <label for="warning">! Ne pas cliquer plusieurs fois sur le bouton de création !</label>
             <div id="error-message" style="color: red; display: none;"></div>
         </form>
         <div id="status-message"></div>
@@ -46,7 +54,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 </div>
 
     <script src="js/script.js"></script>
-    <script src="js/uploadImage.js"></script>
+    <script src="js/uploadEvent.js"></script>
 
 <?php
 include $_SERVER['DOCUMENT_ROOT']. '/includes/footer.php'
