@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
         echo "<div class='text-center'>";
         echo "<p id='date-" . $eventId . "' class='text-center'>Date : $date";
         echo "<h4 class='text-center'>$title</h4>";
-        echo "<p style='text-align: justify;width: 90%;max-width: 768px;'>$text</p>";
+        echo "<p id='text-" . $eventId . "' style='text-align: justify;width: 90%;max-width: 768px;'>$text</p>";
         echo "<a class='btn' role='button' data-bss-hover-animate='pulse' href='$link' style='background: var(--bs-secondary);color: var(--bs-body-bg);text-shadow: 0px 0px 8px var(--bs-black);'>Réserver votre place</a>";
         echo "</div>";
         echo "</div>";
@@ -55,7 +55,8 @@ if ($result->num_rows > 0) {
         echo "<input type='text' id='edited-place-$eventId' placeholder='Éditer le lieu'>";
         echo "<label for='edited-date-$eventId'>Date :</label>";
         echo "<input type='datetime-local' id='edited-date-$eventId' placeholder='Éditer la date'>";
-        // echo "<input type='text' id='edited-title-$eventId' placeholder='Éditer le titre'>";
+        echo "<label for='edited-text-$eventId'>Éditer le texte :</label>";
+        echo "<textarea id='edited-text-$eventId' name='text' rows='6' cols='60'></textarea>";
         echo "<button class='save-button' style='margin-right:6px' id='save-button-$eventId' data-event-id='$eventId'>Sauvegarder</button>";
         echo "<button class='cancel-button' id='cancel-button-$eventId' data-event-id='$eventId'>Annuler</button>";
         echo "</div>";

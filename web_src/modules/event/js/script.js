@@ -40,15 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const editedTitleInput = document.querySelector(`#edited-title-${eventId}`);
             const editedPlaceInput = document.querySelector(`#edited-place-${eventId}`);
             const editedDateInput = document.querySelector(`#edited-date-${eventId}`);
+            const editedTextInput = document.querySelector(`#edited-text-${eventId}`);
 
             // Set the value of the input with the previous fields
             const titleElement = document.querySelector('#title-' + eventId);
             const placeElement = document.querySelector('#place-' + eventId);
             const dateElement = document.querySelector('#date-' + eventId);
+            const textElement = document.querySelector('#text-' + eventId);
 
             const previousTitle = titleElement.textContent.trim();
             const previousPlace = placeElement.textContent.trim();
             const previousDate = dateElement.textContent.trim();
+            const previousText = textElement.textContent.trim();
 
             // Remove prefixes from previous values
             const cleanedPlace = previousPlace.startsWith("Location : ") ? previousPlace.slice("Location : ".length) : previousPlace;
@@ -57,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             editedTitleInput.value = previousTitle;
             editedPlaceInput.value = cleanedPlace;
             editedDateInput.value = formattedPreviousDate;
+            editedTextInput.value = previousText;
 
             // Toggle the display of the edit container
             if (editContainer.style.display === 'none') {
@@ -71,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const editedTitle = document.querySelector('#edited-title-' + eventId).value;
                 const editedPlace = document.querySelector('#edited-place-' + eventId).value;
                 const editedDate = document.querySelector('#edited-date-' + eventId).value;
+                const editedText = document.querySelector('#edited-text-' + eventId).value;
 
                 // Send an AJAX request to update the database with the edited event
                 const xhr = new XMLHttpRequest();
@@ -80,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         titleElement.textContent = editedTitle;
                         placeElement.textContent = editedPlace;
                         dateElement.textContent = editedDate;
+                        textElement.textContent = editedText;
 
                         // Hide the edit container
                         const editContainer = document.querySelector(`#edit-container-${eventId}`);
@@ -96,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 data.append('title', editedTitle);
                 data.append('place', editedPlace);
                 data.append('date', editedDate);
+                data.append('text', editedText);
 
                 // Send a POST request to update_event.php
                 xhr.open('POST', 'requires/edit_event.php', true);
