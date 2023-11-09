@@ -42,7 +42,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
         <div id="status-message"></div>
     </div>
 
-    <div id="image-container">
+    <div id="image-container" style="margin-top:32px">
 
 <?php
 require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/back_office_display.php';
