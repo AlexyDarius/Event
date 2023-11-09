@@ -17,7 +17,9 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 
     <h2 style="text-align : center; font-family: Lato-Bold;color: var(--bs-primary);font-size: 24px;">Retrouvez nos événements ici</h2>
 
-    <div id="image-container">
+    <hr style='margin-top:32px'>
+
+    <div id="event-container">
 
 <?php
 require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/event_displayer.php';
