@@ -6,8 +6,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/head.php'
     <title>Votre interface de gestion de galerie</title>
     <link rel="stylesheet" type="text/css" href="/modules/event/css/style.css">
 </head>
-<body style="--bs-body-bg: #f5efec;--bs-primary: #35251c;--bs-primary-rgb: 53,37,28;--bs-secondary: #ee7830;--bs-secondary-rgb: 238,120,48;color: var(--bs-primary);font-family: Montserrat, sans-serif;">
-
+<body style="--bs-body-bg: #e3f3f5;--bs-body-bg-t: rgba(227, 243, 245, 0.9);--bs-primary: #0c3028;--bs-secondary: #f53219;--bs-primary-t: rgba(12, 48, 40, 0.85);background: var(--bs-body-bg);font-family: Lato-Regular;color: var(--bs-primary);">
 <?php
 require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/upload_event.php';
 ?>
