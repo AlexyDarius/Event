@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
         echo "<div class='row'>";
         echo "<div class='col d-flex justify-content-center'>";
         echo "<div class='d-flex image-box'>";
-        echo "<a href='#'><img class='img-fluid' width='667px' height='500px' src='$imagePath'></a>";
+        echo "<a href='$imagePath'><img class='img-fluid' width='667px' height='500px' src='$imagePath'></a>";
         echo "</a></div>";
         echo "</div>";
         echo "</div>";
