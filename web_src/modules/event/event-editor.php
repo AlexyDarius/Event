@@ -17,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 ?>
 
     <header>
-        <h1 style="margin: 32px; font-weight: bold; text-align: center">Bienvenue sur votre espace gestionnaire de galerie</h1>
+        <h1 style="margin: 32px; font-weight: bold; text-align: center">Bienvenue sur votre espace gestionnaire d</h1>
     </header>
 
     <!-- Form for uploading images -->

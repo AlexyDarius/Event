@@ -20,13 +20,11 @@ if ($result->num_rows > 0) {
         $link = $row['link'];
         
         echo "<section id='event-box' style='margin-right: 32px;margin-left: 32px;'>";
-        echo "<button class='delete-button' data-event-id='$eventId'>Supprimer</button>";
-        // echo " <button class='edit-button' data-image-id='$imageId'>Éditer</button>";
         echo "<div class='container'>";
         echo "<div class='row d-flex justify-content-center'>";
         echo " <div class='col-md-12'>";
         echo "<div>";
-        echo "<h3 style='text-align: center;font-weight: bold;'>$title</h3>";
+        echo "<h3 id='title-" . $eventId . "' style='text-align: center;font-weight: bold;'>$title</h3>";
         echo "<p class='text-center'>Location : $place</p>";
         echo "</div>";
         echo "</div>";
@@ -48,28 +46,19 @@ if ($result->num_rows > 0) {
         echo "</div>";
         echo "</div>";
         echo "</div>";
+        echo "<button class='delete-button' data-event-id='$eventId'>Supprimer</button>";
+        echo "<button class='edit-button' data-event-id='$eventId'>Éditer</button>";
+        echo "<div class='edit-container' id='edit-container-$eventId' style='display: none;'>";
+        echo "<input type='text' id='edited-title-$eventId' placeholder='Éditer le titre'>";
+        // echo "<input type='text' id='edited-title-$eventId' placeholder='Éditer le titre'>";
+        // echo "<input type='text' id='edited-title-$eventId' placeholder='Éditer le titre'>";
+        // echo "<input type='text' id='edited-title-$eventId' placeholder='Éditer le titre'>";
+        echo "<button class='save-button' style='margin-right:6px' id='save-button-$eventId' data-event-id='$eventId'>Sauvergarder</button>";
+        echo "<button class='cancel-button' id='cancel-button-$eventId' data-event-id='$eventId'>Annuler</button>";
+        echo "</div>";
         echo "<hr>";
         echo "</div>";
         echo "</section>";
-
-        // while ($row = $result->fetch_assoc()) {
-        //     $imagePath = "images/" . $row['filename'];
-        //     $imageId = $row['id'];
-        //     $legend = $row['legend'];
-            
-        //     echo "<div class='image-box'>";
-        //     echo "<img src='$imagePath' alt='Image'>";
-        //     echo "<p id='legend-$imageId'>$legend</p>";
-        //     echo "<button class='delete-button' data-image-id='$imageId'>Supprimer</button>";
-        //     echo " <button class='edit-button' data-image-id='$imageId'>Éditer</button>";
-    
-        //     echo "<div class='edit-container' id='edit-container-$imageId' style='display: none;'>";
-        //     echo "<input type='text' id='edited-legend-$imageId' placeholder='Éditer la légende'>";
-        //     echo "<button class='save-button' style='margin-right:6px' id='save-button-$imageId' data-image-id='$imageId'>Sauvergarder</button>";
-        //     echo "<button class='cancel-button' id='cancel-button-$imageId' data-image-id='$imageId'>Annuler</button>";
-        //     echo "</div>";
-    
-        //     echo "</div>";
     }
 } else {
     echo "Aucune image trouvée.";
