@@ -36,9 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
     editButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             const eventId = button.getAttribute('data-event-id');
-            const titleElement = document.querySelector('#title-' + eventId);
-            console.log("event id : " + eventId);
             const editContainer = document.querySelector(`#edit-container-${eventId}`);
+            const editedTitleInput = document.querySelector(`#edited-title-${eventId}`);
+
+             // Set the value of the input with the previous title
+             const titleElement = document.querySelector('#title-' + eventId);
+             const previousTitle = titleElement.textContent.trim();
+             editedTitleInput.value = previousTitle;
 
             // Toggle the display of the edit container
             if (editContainer.style.display === 'none') {
