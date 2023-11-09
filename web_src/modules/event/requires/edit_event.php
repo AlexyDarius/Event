@@ -9,15 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $editedPlace = $_POST['place']; 
     $editedDate = $_POST['date'];
     $editedText = $_POST['text'];
-    // $editedLink = $_POST['link'];
+    $editedLink = $_POST['link'];
 
     // Update the database with the new legend (replace with your database update code)
     $conn = new mysqli("localhost", "root", "root", "dariusdev_db");
 
-    // Ensure you use prepared statements to prevent SQL injection / link = ?
-    $sql = "UPDATE dariusdev_event SET title = ?, place = ?, date = ?, text = ? WHERE id = ?";
+    // Ensure you use prepared statements to prevent SQL injection /
+    $sql = "UPDATE dariusdev_event SET title = ?, place = ?, date = ?, text = ?, link = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssi", $editedTitle, $editedPlace, $editedDate, $editedText, $eventId);
+    $stmt->bind_param("sssssi", $editedTitle, $editedPlace, $editedDate, $editedText, $editedLink, $eventId);
 
     if ($stmt->execute()) {
         // Database update successful
