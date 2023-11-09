@@ -36,7 +36,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
             <textarea id="text" name="text" rows="6" cols="60"></textarea>
             <label for="date">Lien vers la réservation</label>
             <input type="link" name="link" id="link">
-            <button type="submit">Créer l'événement</button>
+            <button type="submit" id="create-event-button">Créer l'événement</button>
             <label for="warning">! Ne pas cliquer plusieurs fois sur le bouton de création !</label>
             <div id="error-message" style="color: red; display: none;"></div>
         </form>

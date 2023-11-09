@@ -1,6 +1,15 @@
 function uploadEvent(event) {
     event.preventDefault(); // Prevent the form from being submitted normally
 
+    // Check if the button is already disabled
+    let createEventButton = document.getElementById('create-event-button');
+    if (createEventButton.disabled) {
+        return; // Do nothing if the button is already disabled
+    }
+
+    // Disable the button to prevent multiple clicks
+    createEventButton.disabled = true;
+
     let form = document.getElementById('event-form');
     let titleInput = document.getElementById('title');
     let placeInput = document.getElementById('place');
@@ -44,6 +53,7 @@ function uploadEvent(event) {
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
+            createEventButton.disabled = false; // Enable the button
             if (xhr.status === 200) {
                 // Image uploaded successfully
                 document.getElementById('status-message').textContent = 'Événement créé avec succès !';
