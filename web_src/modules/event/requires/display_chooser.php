@@ -17,15 +17,28 @@ if ($result->num_rows > 0) {
         $place = $row['place'];
         $display = $row['display'];
         
-        echo "<div id='event-display-" . $eventId . "'>";
-        echo "<h4 id='title-display-" . $eventId . "' style='text-align: center;font-family: Lato-Bold; margin-bottom:0px'>$title</h3>";
-        echo "<p id='place-display-" . $eventId . "' class='text-center' style='margin-bottom:0px'>Location : $place</p>";
-        
+        echo "<div id='event-display-" . $eventId . "' style='display: flex; align-items: center;'>";
+
+        // Text container (left-aligned)
+        echo "<div>";
+        echo "<h4 id='title-display-" . $eventId . "' style='font-family: Lato-Bold; margin-bottom: 0px;'>$title</h3>";
+        echo "<p id='place-display-" . $eventId . "' style='margin-bottom: 0px;'>Location : $place</p>";
+
         // Convert the database date to the desired format
         $dateTime = new DateTime($date);
         $formattedDate = $dateTime->format('d/m/Y H:i');
 
-        echo "<p id='date-display-" . $eventId . "' class='text-center'>Date : $formattedDate";
+        echo "<p id='date-display-" . $eventId . "'>Date : $formattedDate</p>";
+        echo "</div>";
+
+        // Checkbox container (right-aligned)
+        echo "<div style='margin-left: 32px;'>";
+        echo "<label for='checkbox-display-" . $eventId . "' style='margin-right: 6px; margin-bototm: 0px;'>Afficher sur l'accueil</label>";
+        echo "<input type='checkbox' id='checkbox-display-" . $eventId . "' ";
+        echo $display == 1 ? "checked" : "";
+        echo " onchange='updateDisplayStatus($eventId, this.checked)'>";
+        echo "</div>";
+
         echo "</div>";
     }
 } else {

@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 
     <!-- Form for uploading images -->
     <div id="upload-container">
-        <form id="event-form" method="post" enctype="multipart/form-data" onsubmit="uploadImage(event);">
+        <form id="event-form" method="post" enctype="multipart/form-data" onsubmit="uploadEvent(event);">
         <h2 style="margin: 32px; text-align: center; text-decoration: underline;">Ajouter un événement</h2>
             <label for="title">Titre (255 caractères max):</label>
             <input type="text" name="title" id="title" required maxlength="255">
@@ -44,9 +44,12 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
     </div>
 
     <div id="display-container" style="margin: 32px">
-        <?php
-        require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/display_chooser.php'
-        ?>
+        <form id="event-display-form">
+            <h2 style="margin: 32px; text-align: center; text-decoration: underline;">Sélection des événements à afficher sur l'accueil</h2>
+            <?php
+            require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/display_chooser.php'
+            ?>
+        </form>
     <hr>
     </div>
 
@@ -62,6 +65,7 @@ require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/back_office_display.
 
     <script src="js/script.js"></script>
     <script src="js/uploadEvent.js"></script>
+    <script src="js/updateDisplayStatus.js"></script>
 
 <?php
 include $_SERVER['DOCUMENT_ROOT']. '/includes/footer.php'
