@@ -22,6 +22,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
     <!-- Form for uploading images -->
     <div id="upload-container">
         <form id="event-form" method="post" enctype="multipart/form-data" onsubmit="uploadImage(event);">
+        <h2 style="margin: 32px; text-align: center; text-decoration: underline;">Ajouter un événement</h2>
             <label for="title">Titre (255 caractères max):</label>
             <input type="text" name="title" id="title" required maxlength="255">
             <label for="title">Lieu (255 caractères max):</label>
@@ -41,6 +42,8 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
         </form>
         <div id="status-message"></div>
     </div>
+
+    <div id="
 
     <div id="image-container" style="margin-top:32px">
 
