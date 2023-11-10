@@ -25,6 +25,10 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/event_displayer.php';
 ?>
 
+<?php
+require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/selective_displayer.php';
+?>
+
     </div>
 
 <?php
