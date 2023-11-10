@@ -11,14 +11,14 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $imagePath = "../modules/event/images/" . $row['img_filename'];
+        $imagePath = "modules/event/images/" . $row['img_filename'];
         $title = $row['title'];
         $date = $row['date'];
         $place = $row['place'];
         $text = $row['text'];
         $link = $row['link'];
         
-        echo "<section style='margin: 32px;'>";
+        echo "<section style='margin: 32px;>";
         echo "<div class='container'>";
         echo "<div class='row d-flex justify-content-center'>";
         echo " <div class='col-md-12'>";

@@ -38,8 +38,8 @@ input[type="text"], input[type="password"] {
 }
 
 button {
-    background-color: #35251c;
-    color: #f5efec;
+    background-color: #000;
+    color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
@@ -50,4 +50,5 @@ button {
     max-width: 100%; /* Adjust this value as needed */
     box-sizing: border-box; /* Keeps the input within its container */
 }
+
 

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         // Image deleted successfully, remove the image from the page
-                        let eventBox = button.closest('.event-box');
+                        let eventBox = document.getElementById('event-box-' + eventId);
                         eventBox.remove();
                     } else if (xhr.readyState === 4) {
                         // Handle error if needed

@@ -3,8 +3,8 @@ require $_SERVER['DOCUMENT_ROOT']. '/modules/auth/checker.php';
 include $_SERVER['DOCUMENT_ROOT']. '/includes/head.php'
 ?>
 
-    <title>Votre interface de gestion de galerie</title>
-    <link rel="stylesheet" type="text/css" href="/modules/event/css/style.css">
+    <title>Votre interface de gestion d'événement</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body style="--bs-body-bg: #e3f3f5;--bs-body-bg-t: rgba(227, 243, 245, 0.9);--bs-primary: #0c3028;--bs-secondary: #f53219;--bs-primary-t: rgba(12, 48, 40, 0.85);background: var(--bs-body-bg);font-family: Lato-Regular;color: var(--bs-primary);">
 <?php
@@ -16,7 +16,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/includes/navbar.php'
 ?>
 
     <header>
-        <h1 style="margin: 32px; font-weight: bold; text-align: center">Bienvenue sur votre espace gestionnaire d'évenement</h1>
+        <h1 style="margin: 32px; font-weight: bold; text-align: center">Bienvenue sur votre espace gestionnaire d'événement</h1>
     </header>
 
     <!-- Form for uploading images -->
@@ -49,7 +49,7 @@ require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/back_office_display.
 ?>
 
 </div>
-    <p style="text-align: center; font-size: 24px"><a href="localhost:8888/event.php">Revenir à l'accueil</a></p>
+    <p style="text-align: center; font-size: 24px"><a href="https://dariusdev.fr/">Revenir à l'accueil</a></p>
 </div>
 
     <script src="js/script.js"></script>
@@ -58,4 +58,3 @@ require $_SERVER['DOCUMENT_ROOT']. '/modules/event/requires/back_office_display.
 <?php
 include $_SERVER['DOCUMENT_ROOT']. '/includes/footer.php'
 ?>
-
